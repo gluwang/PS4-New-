@@ -3,15 +3,21 @@ public class calculator {
 	private int Years;
 	private double AnnualInterestRate;
 	
+	public calculator(){
+		InvestmentAmount = 10000;
+		Years = 3;
+		AnnualInterestRate = 3.25;
+	}
+	
 	public calculator(double Inverst, int year, double Rate){
 		InvestmentAmount = Inverst;
 		Years = year;
 		AnnualInterestRate = Rate;
 	}
 	
-	double MonthlyRate = AnnualInterestRate / 12;
-	int time = Years * 12;
 	public double Future(){
+		double MonthlyRate = AnnualInterestRate /100 / 12;
+		int time = Years * 12;
 		double future = InvestmentAmount;
 		for(int i = 0; i < time; i++){
 			future = future * (1 + MonthlyRate);
